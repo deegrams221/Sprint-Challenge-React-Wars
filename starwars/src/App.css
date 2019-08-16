@@ -2,3 +2,8 @@
   text-align: center;
 }
 /* write your parent styles in here for your App.js */
+
+div {
+  display: flex;
+  flex-wrap: wrap;
+}

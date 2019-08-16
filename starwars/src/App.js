@@ -8,7 +8,7 @@ const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
 
-    const[charactersState, setCharactersState] = useState(CharacterCard);
+    const[charactersState, setCharactersState] = useState([]);
 
   // Fetch characters from the star wars api in an effect hook. Remember, anytime you have a 
   // side effect in a component, you want to think about which state and/or props it should
@@ -18,7 +18,8 @@ const App = () => {
       axios
         .get(`https://swapi.co/api/people`)
         .then(response => {
-          const charactersState = response.data.people;
+          const charactersState = response.data.results;
+          console.log(charactersState);
           setCharactersState(charactersState);
         })
         .catch(error => {
@@ -29,9 +30,9 @@ const App = () => {
     return (
       <div className="App">
         <Header />
-        {charactersState.map(people => {
+        {charactersState.map(data => {
           return ( 
-            <CharacterCard key = {people.props} CharacterCard = {people} /> 
+            <CharacterCard key = {data.props} data = {data} /> 
           );
         })}
       </div>
