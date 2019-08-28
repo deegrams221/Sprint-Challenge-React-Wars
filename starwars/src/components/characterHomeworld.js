@@ -10,4 +10,4 @@ export default function CharacterHomeworld (props) {
     return (
         <StyledHomeworld>Homeworld: {props.homeworld}</StyledHomeworld>
     )
-}
+} 

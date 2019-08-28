@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import CharGender from "./CharacterGender.js";
 import CharBirthYear from "./characterBirthYear";
-import CharHomeworld from "./characterHomeworld";
+import CharHomeworld from "./CharacterHomeworld";
 
 const StyledCards = styled.div`
   width: 400px;
